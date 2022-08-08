@@ -1,6 +1,3 @@
-
-
-
 // Checks whether or not you have valid data in the fields
 function validateFieldEmail(){
 
@@ -28,7 +25,7 @@ function isEmailValidate(){
     return validateEmail(email);
             
 }
-
+//REGEX
 function validateEmail(email){
     return /\S+@\S+\.\S+/.test(email);
 }
@@ -53,7 +50,7 @@ function login(){
         alert(getErrorMessage(error));
     });
 }
-
+//Small method just to take from one screen to another.
 function register(){
     window.location.href = "../html/signUp.html";
 }
@@ -78,6 +75,7 @@ function recoverPassword(){
     });
 }
 
+//Check if the user has already logged in at another time.
 firebase.auth().onAuthStateChanged(user => {
     if(user){
         window.location.href = "../html/localShopToGo.html";

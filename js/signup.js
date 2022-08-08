@@ -4,12 +4,6 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
-const form = {
-    email: () => document.getElementById('email'),
-    password: () => document.getElementById('password'),
-    confirmPassword: () => document.getElementById('confirmPassword'),
-    registerButton: () => document.getElementById('register-button')
-}
 
 function onChangeEmail(){
 
@@ -37,7 +31,7 @@ function validateEmail(email){
 
 function onChangePassword(){
 
-    const password = form.password().value;
+    const password = document.getElementById('password');
     if(password.length < 6){
         alert("Password needs 6 or more characters");
     }
@@ -46,8 +40,8 @@ function onChangePassword(){
 
 function onChangeConfirmPassword(){
 
-    const confirmPassword = form.confirmPassword().value;
-    const password = form.password().value;
+    const confirmPassword = document.getElementById('confirmPassword');
+    const password = document.getElementById('password');
     if(password != confirmPassword){
         alert("Password fields must be the same.");
     }
@@ -58,21 +52,21 @@ function onChangeConfirmPassword(){
 }
 
 function toggleRegisterButtonDisable() {
-    form.registerButton().disabled = !isFormValid();
+    document.getElementById('register-button').disabled = !isFormValid();
 }
 
 function isFormValid() {
-    const email = form.email().value;
+    const email = document.getElementById('email');
     if (!email || !validateEmail(email)) {
         return false;
     }
 
-    const password = form.password().value;
+    const password = document.getElementById('password');
     if (!password || password.length < 6) {
         return false;
     }
 
-    const confirmPassword = form.confirmPassword().value;
+    const confirmPassword = document.getElementById('confirmPassword');
     if (password != confirmPassword) {
         return false;
     }
@@ -82,8 +76,8 @@ function isFormValid() {
 
 function register(){
     
-    const email = form.email().value;
-    const password = form.password().value;
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
 
     firebase.auth().createUserWithEmailAndPassword(
         email,password

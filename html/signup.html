@@ -17,11 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- Js created by Luisa Nunes -->
     <script src="../js/menu.js"></script>
-    
-    <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
-    <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
-    <script type = "module" src = ../../js/firebase-init.js></script>
-    <script src="../js/signup.js"></script> 
+
+
 
 </head>
 
@@ -70,7 +67,6 @@
                         <input type="password" id="password" placeholder=" " onchange="onChangePassword()">
                         <label for="password">Password</label>
                         <i id="lookPassword" class="fa fa-eye" aria-hidden="true"></i>
-
                     </div>
 
                     <div class="label-float">
@@ -127,11 +123,28 @@
           </footer>
       
           
- 
-
-          <script src="../js/mobile-navbar.js"></script>
+          
 
 
     </body>
+
+    
+          <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+          <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+          <script >
+              const firebaseConfig = {
+                  apiKey: "AIzaSyD4B5pZLuY1NIL23mvjn7gN6mtvZ8ngR2E",
+                  authDomain: "think-travel-980d8.firebaseapp.com",
+                  databaseURL: "https://think-travel-980d8-default-rtdb.europe-west1.firebasedatabase.app",
+                  projectId: "think-travel-980d8",
+                  storageBucket: "think-travel-980d8.appspot.com",
+                  messagingSenderId: "316025540931",
+                  appId: "1:316025540931:web:3d68968a71286eff68dff6",
+                  measurementId: "G-7D0MCFMRM0"
+              };
+              firebase.initializeApp(firebaseConfig);
+          </script>
+          <script src="../js/signup.js"></script> 
+          <script src="../js/mobile-navbar.js"></script>
 
 </html>

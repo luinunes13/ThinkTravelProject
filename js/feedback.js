@@ -10,6 +10,7 @@ function findFeedbacks() {
         })
 }
 
+//Get feedback from firestore/firebase and show it on screen.
 function showFeedbacks(feedbacks){
     const list = document.getElementById('list');
     

@@ -48,11 +48,11 @@
                                         <p>
                                             Think Travel is about shopping with soul.
                                         </p>
-                                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="country">
                                             <option selected="">Country</option>
-                                            <option value="1">Ireland</option>
-                                            <option value="2">Brazil</option>
-                                            <option value="3">Italy</option>
+                                            <option value="Ireland">Ireland</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="Italy">Italy</option>
                                         </select>
 
                                         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -68,7 +68,7 @@
                                             <option value="3">Food</option>
                                         </select>
                                         <div class="button">
-                                            <input type="button" value="Search" />
+                                            <input type="button" value="Search" onclick="findStore()"/>
                                         </div>
                                     </div>
                                 </div>
@@ -122,6 +122,24 @@
       </div>
     </footer>
 
+    <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore-compat.js"></script>
+    <script >
+      const firebaseConfig = {
+          apiKey: "AIzaSyD4B5pZLuY1NIL23mvjn7gN6mtvZ8ngR2E",
+          authDomain: "think-travel-980d8.firebaseapp.com",
+          databaseURL: "https://think-travel-980d8-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "think-travel-980d8",
+          storageBucket: "think-travel-980d8.appspot.com",
+          messagingSenderId: "316025540931",
+          appId: "1:316025540931:web:3d68968a71286eff68dff6",
+          measurementId: "G-7D0MCFMRM0"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
     <script src="../js/mobile-navbar.js"></script>
+    <script src="../js/localShopToGo.js"></script>
   </body>
 </html>

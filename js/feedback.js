@@ -1,5 +1,5 @@
+//Retrieve bank feedback.
 findFeedbacks();
-
 function findFeedbacks() {
     firebase.firestore()
         .collection('feedback')
@@ -19,9 +19,8 @@ const form = {
     avaliation: () => document.getElementById('avaliation')
 }
 
+//Send the feedback to the bank.
 function sendFeedback(){
-
-
     const feedback = {
         username :form.name().value,
         feedbackUser : form.feedback().value,

@@ -1,9 +1,9 @@
 //Check if the user has already logged in at another time.
-//firebase.auth().onAuthStateChanged(user => {
-//    if(user){
-//        window.location.href = "../html/localShopToGo.html";
-//    }
-//})
+firebase.auth().onAuthStateChanged(user => {
+    if(user){
+        window.location.href = "../html/localShopToGo.html";
+    }
+})
 
 //Check Email
 function onChangeEmail(){

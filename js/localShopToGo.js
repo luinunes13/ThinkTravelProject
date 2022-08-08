@@ -7,11 +7,28 @@ function findStore() {
         .get()
         .then(snapshot => {
             const stores = snapshot.docs.map(doc => doc.data());
-            showStore(stores);
+            filtertore(stores);
         })
 }
 
-function showStore(stores){
-    console.log(stores);
+function filterStore(stores){
+
+    const city = document.getElementById("city").value;
+    const category = document.getElementById("category").value;
+    const findData = [];
+
+    stores.forEach(element => {
+        if(element.City == city){
+            if(element.Category == category){
+                findData.push(element);
+            }
+        }
+    });
+    
+    showData(findData);
+}
+
+showData(findaData){
+    
 }
 

@@ -11,8 +11,24 @@ function findFeedbacks() {
 }
 
 function showFeedbacks(feedbacks){
-    console.log(feedbacks);
+    const list = document.getElementById('list');
+    
+    feedbacks.forEach(feedback =>{
+        console.log(feedback.username);
+        const li = document.createElement('li');
+
+        const name = document.createElement('h4');
+        name.innerHTML= feedback.username;
+        li.appendChild(name);
+
+        const msg = document.createElement('p');
+        msg.innerHTML = feedback.feedbackUser;
+        li.appendChild(msg);
+
+        list.appendChild(li);
+    })
 }
+
 const form = {
     name: () => document.getElementById('name'),
     feedback: () => document.getElementById('feedback'),

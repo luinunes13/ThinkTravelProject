@@ -18,6 +18,10 @@ function showFeedbacks(feedbacks){
         console.log(feedback.username);
         const li = document.createElement('li');
 
+        const avaliation= document.createElement('h1');
+        avaliation.innerHTML = feedback.avaliation;
+        li.appendChild(avaliation);
+
         const name = document.createElement('h4');
         name.innerHTML= feedback.username;
         li.appendChild(name);

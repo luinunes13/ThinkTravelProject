@@ -1,5 +1,8 @@
 function findStore() {
 
+    const divData = document.getElementById("list");
+    divData.innerHTML="";
+
     const country= document.getElementById("country").value;
     firebase.firestore()
         .collection(country)
@@ -8,19 +11,17 @@ function findStore() {
             const stores = snapshot.docs.map(doc => doc.data());
             filterStore(stores);
         })
+
 }
 
 function filterStore(stores){
 
     const city = document.getElementById("city").value;
-    const category = document.getElementById("category").value;
     const findData = [];
 
     stores.forEach(element => {
         if(element.City == city){
-            if(element.Category == category){
-                findData.push(element);
-            }
+            findData.push(element);   
         }
     });
     
@@ -44,6 +45,10 @@ function showData(findData){
         const Category = document.createElement('p');
         Category.innerHTML = data.Category;
         li.appendChild(Category);
+
+        const deals = document.createElement('p');
+        deals.innerHTML = data.Deals;
+        li.appendChild(deals);
 
         list.appendChild(li);
     })
@@ -139,6 +144,4 @@ function selectCountry(){
 
         */
     }
-    
 }
-
